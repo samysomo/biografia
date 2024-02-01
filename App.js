@@ -1,20 +1,36 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { View, Text, SafeAreaView, StyleSheet, ScrollView, Image} from "react-native";
+import TextComponent from "./components/TextComponent";
 
-export default function App() {
+const App = () => {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+    <SafeAreaView style={styles.container}>
+      <ScrollView>
+        <Text style={styles.title}>Mi Biografia</Text>
+        <Image style={styles.image} source={require("./assets/images/napo.jpg")}/>
+        <TextComponent></TextComponent>
+      </ScrollView>
+    </SafeAreaView>
+  )
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+      flex: 1,
+      alignItems: "center",
+      justifyContent: "center",
+      width: "100%",
+      height: "100%",
+      backgroundColor: '#487eb0'
   },
-});
+  image: {
+    width: 100,
+    height: 100
+  },
+  title: {
+    fontSize: 14,
+    fontWeight:"normal",
+    color: "#dfe6e9"
+  }
+})
+
+export default App;
