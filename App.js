@@ -6,8 +6,12 @@ const App = () => {
     <SafeAreaView style={styles.container}>
       <ScrollView>
         <Text style={styles.title}>Mi Biografia</Text>
-        <Image style={styles.image} source={require("./assets/images/napo.jpg")}/>
-        <TextComponent></TextComponent>
+        <View style={styles.container}>
+          <Image style={styles.image} source={require("./assets/images/napo.jpg")}/>
+          <View style={styles.textContainer}>
+            <TextComponent></TextComponent>
+          </View>
+        </View>
       </ScrollView>
     </SafeAreaView>
   )
@@ -16,20 +20,34 @@ const App = () => {
 const styles = StyleSheet.create({
   container: {
       flex: 1,
+      gap: 40,
       alignItems: "center",
       justifyContent: "center",
       width: "100%",
       height: "100%",
-      backgroundColor: '#487eb0'
+      backgroundColor: '#66b4cc',
+      padding: 25
   },
   image: {
-    width: 100,
-    height: 100
+    marginTop: 40,
+    width: 200,
+    height: 300
   },
   title: {
-    fontSize: 14,
-    fontWeight:"normal",
-    color: "#dfe6e9"
+    fontSize: 35,
+    fontWeight: "bold",
+    color: "#dfe6e9",
+    textAlign: "center",
+    padding: 10
+  },
+  textContainer:{
+    alignItems: "center",
+      justifyContent: "center",
+      width: "80%",
+      height: "55%",
+      backgroundColor: '#e2e8e1',
+      padding: 15,
+      borderRadius: 50
   }
 })
 
